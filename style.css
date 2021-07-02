@@ -1,0 +1,90 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #edf1f4;
+}
+
+.loader {
+    display: flex;
+    flex-direction: row;
+}
+
+.loader div {
+    position: relative;
+    width: 30px;
+    height: 150px;
+    margin: 15px;
+    overflow: hidden;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05, #edf1f4));
+    border: 2px solid #edf1f4;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1), -15px -15px 20px #fff, inset -5px -5px 5px rgba(255, 255, 255, 0.5), inset -5px -5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.loader div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    border-radius: 40px;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1), -15px -15px 20px #fff, inset -5px -5px 5px rgba(255, 255, 255, 0.5), inset -5px -5px 5px rgba(0, 0, 0, 0.5);
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+}
+
+.loader div::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.2), 0 420px 0px 400px #2196f3, inset -5px -5px 5px rgba(255, 255, 255, 0.5), inset -5px -5px 5px rgba(0, 0, 0, 0.5);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    animation: loading 2s ease-in-out infinite;
+    -webkit-animation: loading 2s ease-in-out infinite;
+    transform: translateY(130px);
+    -webkit-transform: translateY(130px);
+    -moz-transform: translateY(130px);
+    -ms-transform: translateY(130px);
+    -o-transform: translateY(130px);
+    animation-delay: calc(-0.5s * var(--i));
+}
+
+@keyframes loading {
+    0% {
+        transform: translateY(130px);
+        filter: hue-rotate(180deg);
+        -webkit-filter: hue-rotate(180deg);
+        -webkit-transform: translateY(130px);
+        -moz-transform: translateY(130px);
+        -ms-transform: translateY(130px);
+        -o-transform: translateY(130px);
+    }
+    50% {
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        -moz-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+        -o-transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(160px);
+    }
+}
